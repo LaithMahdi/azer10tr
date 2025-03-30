@@ -5,10 +5,12 @@ import 'package:employee_attendance/services/chat_service.dart';
 import 'package:employee_attendance/services/db_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('fr_FR', null);
 
   // Initialiser Supabase
   await Supabase.initialize(
