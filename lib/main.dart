@@ -9,12 +9,12 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialiser Supabase
   await Supabase.initialize(
-    url: 'https://fqkvyusoqjvgwblbfwwe.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxa3Z5dXNvcWp2Z3dibGJmd3dlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ2NTQ2NzgsImV4cCI6MjA1MDIzMDY3OH0.wCtB5uSlhGTJzGE_1sXNZkX587qZBcI9hXfnO4J11Zc'
-  );
+      url: 'https://fqkvyusoqjvgwblbfwwe.supabase.co',
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxa3Z5dXNvcWp2Z3dibGJmd3dlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ2NTQ2NzgsImV4cCI6MjA1MDIzMDY3OH0.wCtB5uSlhGTJzGE_1sXNZkX587qZBcI9hXfnO4J11Zc');
 
   runApp(const MyApp());
 }
@@ -30,19 +30,17 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AuthService()),
         ChangeNotifierProvider(create: (context) => DbService()),
         ChangeNotifierProvider(create: (context) => AttendanceService()),
-        Provider<ChatService>(create: (_) => ChatService()),      ],
+        Provider<ChatService>(create: (_) => ChatService()),
+      ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false ,
+        debugShowCheckedModeBanner: false,
         title: 'Employee attendance',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         home: const SplashScreen(),
-        
       ),
-      
     );
-    
   }
 }
